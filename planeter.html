@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solsystemet</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.93/build/spline-viewer.js"></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/modal.js" defer></script>
+    <script src="scripts/autoplay.js" defer></script>
+    <link
+        href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901&f[]=clash-display@400,500,600,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Stjernebaggrund -->
+    <section class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </section>
+
+    <audio id="audioplayer" src="spaceambiance.mp3" autoplay loop></audio>
+
+    <main>
+        <!-- Vores rumfartøj, som ligger udenfor alle sektioner, så den forbliver i omløb hele rejsen gennem -->
+        <div class="space-block">
+            <spline-viewer class="spaceshuttle"
+                url="https://prod.spline.design/oE5o3XnJmlfoM-M3/scene.splinecode"></spline-viewer>
+        </div>
+
+
+        <!-- Modal til Jorden med content som inkluderer infographic -->
+        <section class="jorden-modal">
+            <div class="modal-content-jorden">
+                <!-- Lukkeknap -->
+                <div class="cross" id="earth-close">
+                    <div class="horizontal"></div>
+                    <div class="vertical"></div>
+                </div>
+                <div class="image-section-jorden">
+                    <div class="info-header">
+                        <div class="info-h1">
+                            <h1>Jorden</h1>
+                        </div>
+                        <div class="info-line"></div>
+                        <div class="info-h2">
+                            <h2>Den blå <br> planet</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="infographic">
+                    <div>
+                        <img id="mars-image1" src="img/earth-info.png" alt="">
+                    </div>
+                    <div>
+                        <img id="mars-image2" src="img/Group600.png" alt="">
+                    </div>
+                    <div>
+                        <img id="mars-image3" src="img/Group602.png" alt="">
+                    </div>
+                    <div class="blue-light"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="jorden-section">
+            <div class="earth-top">
+                <div class="info-section-earth">
+                    <div class="header-earth">
+                        <h1>Jorden</h1>
+                        <div class="line-earth"></div>
+                        <h2>Den blå planet</h2>
+                    </div>
+                    <p> Vores rejse begynder på vores egen planet, Jorden. Vores smukke, blå planet er den tredje fra
+                        Solen og den eneste kendte verden, der huser liv. <br> Med en gennemsnitstemperatur på omkring
+                        15° C og en atmosfære rig på ilt, er Jorden et perfekt sted for en utrolig
+                        mangfoldighed af livsformer. Den har en enkelt naturlig satellit, Månen, som er den femtestørste
+                        måne i solsystemet.
+                    </p>
+                    <button class="explore-btn" id="jorden-modal-btn">Udforsk mere</button>
+                </div>
+                <div class="spline-canvas">
+                    <spline-viewer id="earth"
+                        url="https://prod.spline.design/Zhqgnv7FVV3ZoYX5/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="overview">
+                    <div class="overview-checkpoint" id="overview-sol">
+                        <p>Solen</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint" id="overview-merkur">
+                        <p>Merkur</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint" id="overview-venus">
+                        <p>Venus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint is-active" id="overview-jorden">
+                        <p>Jorden</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint" id="overview-mars">
+                        <p>Mars</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint" id="overview-jupiter">
+                        <p>Jupiter</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint" id="overview-saturn">
+                        <p>Saturn</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint" id="overview-uranus">
+                        <p>Uranus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint" id="overview-neptun">
+                        <p>Neptun</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-planet">
+                <div class="planet" id="solen-btn">
+                    <img src="img/sol@2-520x520.png" alt="Jorden">
+                    <div class="planet-info">
+                        <h2>Solen</h2>
+                        <h3>Solsystemets centrum</h3>
+                    </div>
+                </div>
+                <img class="spaceman1" src="img/SpacemanTekst.png" alt="">
+            </div>
+        </section>
+
+        <section class="solen-section">
+            <div class="top">
+                <div class="info-section-solen">
+                    <div class="header-solen" id="solen-info">
+                        <h1>Solen</h1>
+                        <div class="line"></div>
+                        <h2>Solsystemets centrum</h2>
+                    </div>
+                    <p>Midtpunktet for vores solsystem, Solen lyser som en evig flamme, der giver liv og energi til alt
+                        omkring den. En uendelig fusion ovn, der kaster sit varme skær ud i det kolde tomrum, Solen er
+                        vores moderskab, vores kilde til lys og varme, og det brændende hjerte, der styrer vores himmel.
+                    </p>
+                </div>
+                <div class="spline-canvas">
+                    <spline-viewer id="solen"
+                        url="https://prod.spline.design/AKZMQXyj-oIZUEu1/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="overview solen-overview">
+                    <div class="overview-checkpoint is-active">
+                        <p>Solen</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Merkur</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Venus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jorden</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Mars</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jupiter</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Saturn</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Uranus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Neptun</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-planet solen-next-planet">
+                <div class="planet" id="merkur-btn">
+                    <img src="img/Merkur@1-1000x1000.png" alt="Jorden">
+                    <div class="planet-info">
+                        <h2>Merkur</h2>
+                        <h3>Stenørkenen</h3>
+                    </div>
+                </div>
+                <img class="spaceman1" src="img/SpacemanTekst.png" alt="">
+            </div>
+        </section>
+
+        <section class="venus-section">
+            <div class="top">
+                <div class="spline-canvas">
+                    <spline-viewer id="venus"
+                        url="https://prod.spline.design/n4nTpgvYSEEd1nZh/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="info-section info-section-venus">
+                    <div class="header">
+                        <h1>Venus</h1>
+                        <div class="line"></div>
+                        <h2>Jordens tvilling</h2>
+                    </div>
+                    <p>Efter at have forladt Jordens trygge og livsbekræftende atmosfære, sætter vi kursen mod Venus.
+                        Venus
+                        er
+                        den anden planet fra Solen og er næsten af samme størrelse som Jorden, hvilket har givet den
+                        kælenavnet
+                        "Jordens tvilling". <br> <br> Men lighederne stopper næsten der. Når vi nærmer os, bliver vi
+                        mødt af
+                        en tyk,
+                        gul
+                        sky af svovlsyre, der skjuler planetens overflade for vores syn.</p>
+                </div>
+                <div class="overview venus-overview">
+                    <div class="overview-checkpoint">
+                        <p>Solen</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Merkur</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint is-active">
+                        <p>Venus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jorden</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Mars</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jupiter</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Saturn</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Uranus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Neptun</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-planet venus-next-planet">
+                <div class="planet" id="mars-btn">
+                    <img src="img/Mars @1-520x520.png" alt="Jorden">
+                    <div class="planet-info">
+                        <h2>Mars</h2>
+                        <h3>Den røde planet</h3>
+                    </div>
+                </div>
+                <img class="spaceman1" src="img/SpacemanTekst.png" alt="">
+            </div>
+        </section>
+
+        <section class="mars-modal">
+            <div class="modal-content-mars">
+                <div class="cross" id="mars-close">
+                    <div class="horizontal"></div>
+                    <div class="vertical"></div>
+                </div>
+                <div class="image-section">
+                    <div class="info-header">
+                        <div class="info-h1">
+                            <h1>Mars</h1>
+                        </div>
+                        <div class="info-line"></div>
+                        <div class="info-h2">
+                            <h2>Den røde <br> planet</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="infographic">
+                    <div>
+                        <img id="mars-image1" src="img/mars.png" alt="">
+                    </div>
+                    <div>
+                        <img id="mars-image2" src="img/Group601.png" alt="">
+                    </div>
+                    <div>
+                        <img id="mars-image3" src="img/Group603.png" alt="">
+                    </div>
+                    <div class="red-light"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mars-section">
+            <div class="top">
+                <div class="info-section-mars">
+                    <div class="header">
+                        <h1>Mars</h1>
+                        <div class="line"></div>
+                        <h2>Den røde planet</h2>
+                    </div>
+                    <p>Efter at have forladt Jordens trygge omfavnelse, sætter vores rumskib kurs mod Mars, den røde
+                        planet. <br> <br>
+                        Mars er den fjerde planet fra Solen og er kendt for sin karakteristiske røde farve, som skyldes
+                        jernoxid (rust) på dens overflade. Med halvdelen af Jordens diameter og kun 11% af dens masse er
+                        Mars en kold, tør ørkenverden med en tynd atmosfære primært bestående af kuldioxid.</p>
+                    <button class="explore-btn" id="mars-modal-btn">Udforsk mere</button>
+                </div>
+                <div class="spline-canvas">
+                    <spline-viewer id="mars"
+                        url="https://prod.spline.design/mqQB3Keu47FsiUXW/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="overview mars-overview">
+                    <div class="overview-checkpoint">
+                        <p>Solen</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Merkur</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Venus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jorden</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint is-active">
+                        <p>Mars</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jupiter</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Saturn</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Uranus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Neptun</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-planet mars-next-planet">
+                <div class="planet" id="jupiter-btn">
+                    <img src="img/Jupiter@1-520x520.png" alt="Jorden">
+                    <div class="planet-info">
+                        <h2>Jupiter</h2>
+                        <h3>Solsystemets gigant</h3>
+                    </div>
+                </div>
+                <img class="spaceman1" src="img/SpacemanTekst.png" alt="">
+            </div>
+        </section>
+
+        <section class="merkur-section">
+            <div class="top">
+                <div class="spline-canvas">
+                    <spline-viewer id="merkur"
+                        url="https://prod.spline.design/7wMew4w3xXZIonCN/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="info-section info-section-merkur">
+                    <div class="header">
+                        <h1>Merkur</h1>
+                        <div class="line"></div>
+                        <h2>Stenørkenen</h2>
+                    </div>
+                    <p>Efter at have forladt Jordens trygge kredsløb, sætter vores rumskib kursen mod Merkur. <br> <br>
+                        Merkur er en fascinerende verden. På trods af sin nærhed til Solen, er den ikke den varmeste
+                        planet – den ære går til Venus på grund af dens tykke atmosfære. Merkur, derimod, har næsten
+                        ingen atmosfære. Dette betyder, at der er ekstreme temperaturforskelle mellem dag og nat, fra
+                        brændende 427 grader Celsius om dagen til iskolde -173 grader om natten.
+                    </p>
+                </div>
+                <div class="overview merkur-overview">
+                    <div class="overview-checkpoint">
+                        <p>Solen</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint is-active">
+                        <p>Merkur</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Venus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jorden</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Mars</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jupiter</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Saturn</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Uranus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Neptun</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-planet merkur-next-planet">
+                <div class="planet" id="venus-btn">
+                    <img src="img/Venus@1-600x600.png" alt="Jorden">
+                    <div class="planet-info">
+                        <h2>Venus</h2>
+                        <h3>Jordens tvilling</h3>
+                    </div>
+                </div>
+                <img class="spaceman1" src="img/SpacemanTekst.png" alt="">
+            </div>
+
+        </section>
+
+
+
+        <section class="saturn-section">
+            <div class="earth-top">
+                <div class="info-section-earth info-section-saturn">
+                    <div class="header-earth">
+                        <h1>Saturn</h1>
+                        <div class="line-earth"></div>
+                        <h2>Genkendeligt ringsystem</h2>
+                    </div>
+                    <p> Vores eventyr fortsætter til Saturn, solsystemets juvel. Efter at have forladt Mars' røde
+                        landskaber, accelererer vores rumskib gennem det ydre solsystem. <br> <br>
+                        Saturn er den sjette planet fra Solen og den næststørste i vores solsystem. Kendt for sine
+                        betagende ringe, er Saturn et ægte vidunder at betragte. Disse ringe er primært sammensat af
+                        ispartikler, klippestykker og støv.
+                    </p>
+                </div>
+                <div class="spline-canvas">
+                    <spline-viewer id="saturn"
+                        url="https://prod.spline.design/N2TczpnFsUlm6LDi/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="overview saturn-overview">
+                    <div class="overview-checkpoint">
+                        <p>Solen</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Merkur</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Venus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jorden</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Mars</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jupiter</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint is-active">
+                        <p>Saturn</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Uranus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Neptun</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-planet saturn-next-planet">
+                <div class="planet" id="uranus-btn">
+                    <img src="img/Uranus@1-520x520.png" alt="Jorden">
+                    <div class="planet-info">
+                        <h2>Uranus</h2>
+                        <h3>Den koldeste planet</h3>
+                    </div>
+                </div>
+                <img class="spaceman1" src="img/SpacemanTekst.png" alt="">
+            </div>
+        </section>
+
+        <section class="jupiter-section">
+            <div class="top">
+                <div class="spline-canvas">
+                    <spline-viewer id="jupiter"
+                        url="https://prod.spline.design/a3Ifm-hKZazdm5q7/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="info-section info-section-jupiter">
+                    <div class="header">
+                        <h1>Jupiter</h1>
+                        <div class="line"></div>
+                        <h2>Solsystemets gigant</h2>
+                    </div>
+                    <p>Vores rumskib forlader Mars' røde ørkenlandskaber og sætter kurs mod Jupiter - solsystemets
+                        gigant. Denne gasgigant er så stor, at alle solsystemets andre planeter tilsammen kunne passe
+                        inden i den. <br> <br>
+                        Jupiter er den femte planet fra Solen og den største i vores solsystem. Den består primært af
+                        hydrogen og helium, lignende solens sammensætning, og har et komplekst system af ringe og måner.
+                    </p>
+                </div>
+                <div class="overview jupiter-overview">
+                    <div class="overview-checkpoint">
+                        <p>Solen</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Merkur</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Venus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jorden</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Mars</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint is-active">
+                        <p>Jupiter</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Saturn</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Uranus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Neptun</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-planet jupiter-next-planet">
+                <div class="planet" id="saturn-btn">
+                    <img src="img/Saturn @1-520x520.png" alt="Jorden">
+                    <div class="planet-info">
+                        <h2>Saturn</h2>
+                        <h3>Genkendeligt ringsystem</h3>
+                    </div>
+                </div>
+                <img class="spaceman1" src="img/SpacemanTekst.png" alt="">
+            </div>
+        </section>
+
+        <section class="uranus-section">
+            <div class="top">
+                <div class="spline-canvas">
+                    <spline-viewer id="uranus"
+                        url="https://prod.spline.design/vLJ0jYWbn3bFtn82/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="info-section info-section-uranus">
+                    <div class="header">
+                        <h1>Uranus</h1>
+                        <div class="line"></div>
+                        <h2>Den koldeste planet</h2>
+                    </div>
+                    <p>Efter vores tid ved Saturn, vender vi vores rumskib mod Uranus, solsystemets tredjestørste planet
+                        målt efter diameter. Denne iskolde kæmpe har en unik blågrøn farve, primært på grund af methan i
+                        atmosfæren, som absorberer rødt lys og reflekterer det blå og grønne lys. <br> <br>
+                        Efter at have oplevet Uranus er tiden kommet til at vende tilbage til Jorden igen. Her kan
+                        udforske planeterne på egen hånd eller vælge at tage en ny rumrejse.
+                    </p>
+                </div>
+                <div class="overview uranus-overview">
+                    <div class="overview-checkpoint">
+                        <p>Solen</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Merkur</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Venus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jorden</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Mars</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jupiter</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Saturn</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint is-active">
+                        <p>Uranus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Neptun</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-planet uranus-next-planet">
+                <div class="planet" id="neptun-btn">
+                    <img src="img/Neptun@1-520x520.png" alt="Jorden">
+                    <div class="planet-info">
+                        <h2>Neptun</h2>
+                        <h3>Den yderste planet</h3>
+                    </div>
+                </div>
+                <img class="spaceman1" src="img/SpacemanTekst.png" alt="">
+            </div>
+        </section>
+
+        <section class="neptun-section">
+            <div class="earth-top">
+                <div class="info-section-earth info-section-neptun">
+                    <div class="header-earth">
+                        <h1>Neptun</h1>
+                        <div class="line-earth"></div>
+                        <h2>Den yderste planet</h2>
+                    </div>
+                    <p> Efter at have forladt Saturns strålende ringe bag os, sætter vi kursen mod Neptun, solsystemets
+                        fjerneste planet siden dværgplaneten Plutos reklassificering. Denne rejse tager os dybt ind i
+                        det kolde, ydre rum, hvor sollyset er svagt, og afstandene er enorme. <br> <br>
+                        Neptuns blå farve skyldes metanen i atmosfæren, som absorberer rødt lys og reflekterer blåt.
+                    </p>
+                </div>
+                <div class="spline-canvas">
+                    <spline-viewer id="neptun"
+                        url="https://prod.spline.design/gnAuuMj1CWf23tQ2/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="overview neptun-overview">
+                    <div class="overview-checkpoint">
+                        <p>Solen</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Merkur</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Venus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jorden</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Mars</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Jupiter</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Saturn</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint">
+                        <p>Uranus</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                    <div class="overview-checkpoint is-active">
+                        <p>Neptun</p>
+                        <div class="overview-bubble"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="next-planet neptun-next-planet">
+                <a href="index.html" class="planet" id="reur-btn">
+                    <img src="img/rumraket.png" alt="Jorden">
+                    <div class="planet-info-retur">
+                        <h2>Tilbage til start</h2>
+                    </div>
+                </a>
+                <img class="spaceman1" src="img/SpacemanTekst.png" alt="">
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
